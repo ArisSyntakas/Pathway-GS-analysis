@@ -21,7 +21,7 @@ library(enrichR)
 
 ```{r GSEA}
 #rank gene list
-ranked_genes <- DESeq2_Output$logFC*log10(DESeq2_Output$FDR)
+ranked_genes <- -log10(DESeq2_Output$FDR)*DESeq2_Output$logFC
 names(ranked_genes) <- DESeq2_Output$gene_name
 
 #import chosen gene set
